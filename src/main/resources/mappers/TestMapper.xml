@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.springboot.mapper.TestMapper">
+
+    <!--新增普通用户-->
+    <insert id="insertUser" useGeneratedKeys="true" keyColumn="u_id" keyProperty="uId">
+        insert into tb_user( u_account, u_nickname)
+        values (#{uAccount}, #{uNickname})
+    </insert>
+    <!--查询普通用户-->
+    <select id="selectUserByAccount" resultType="com.example.demo.springboot.entity.TbUser" flushCache="true">
+        select * from tb_user where u_account = #{account} and #{rand} = #{rand}
+    </select>
+    <select id="selectUserByAccount1" resultType="com.example.demo.springboot.entity.TbUser" flushCache="true">
+        select * from tb_user where u_account = #{account} and #{rand} = #{rand}
+    </select>
+    <update id="updateUserNickname">
+        update tb_user set u_nickname = #{nickname} where u_account = #{account}
+    </update>
+</mapper>

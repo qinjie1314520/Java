@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://139.9.87.17:3306/campusshops?useUnicode=true&serverTimezone=GMT&characte&useSSL=false&allowMultiQueries=true
+    password: campusshops
+    username: campusshops
+    hikari:
+      isolate-internal-queries: false
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true #mybatis配置数据库中下划线自动转为驼峰
+    auto-mapping-behavior: full  #开启自动注入，最高等级的自动注入
+    call-setters-on-nulls: true #设置字段可以为空
+    cache-enabled: false
