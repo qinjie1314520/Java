@@ -9,7 +9,8 @@ import java.util.Set;
 public class LinkedHashMap1 {
     public static void main(String args[]){
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-//        linkedHashMap.put("a", "1");
+        linkedHashMap.put("a", "1");
+        linkedHashMap.get(1);
 //        linkedHashMap.put("b", "2");
 //        linkedHashMap.put("c", "3");
 //        linkedHashMap.forEach((x, y)->System.out.println(x+"->"+y));

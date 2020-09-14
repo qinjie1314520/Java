@@ -76,14 +76,19 @@ public class other {
 //        t(a);
 //        System.out.println(a);
 //
-        System.out.println(5&0);
+//        System.out.println(5&0);
+//
+//        String s = "您好！";
+//        System.out.println(s.length());
+//        System.out.println(s.charAt(0));
 
-        String s = "您好！";
-        System.out.println(s.length());
-        System.out.println(s.charAt(0));
-
+        System.out.println(new te().t);
     }
     public static void t(Integer a){
         a = 1;
+    }
+
+    static class te{
+        public int t = 1;
     }
 }
