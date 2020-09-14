@@ -14,4 +14,5 @@ public interface TestService {
     Object test4_1();
 
     void aop();
+    void threadLocal();
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+
 @RestController
 public class TestController {
     @Autowired
@@ -66,5 +68,20 @@ public class TestController {
     public void aop1(){
         testService1.sayHello("asd");
         System.out.println(testService1.getClass());
+    }
+    public static HashMap r = new HashMap();
+    public static final ThreadLocal<String> threadLocal = new ThreadLocal<String>();
+    @GetMapping("/threadLocal1")
+    public String threadLocal(){
+        threadLocal.set("hello world");
+        testService.threadLocal();
+        r.put("a", "a");
+        return (threadLocal.get());
+    }
+    @GetMapping("/threadLocal2")
+    public String threadLocal2(){
+        testService.threadLocal();
+System.out.println(r.get("a"));
+       return (threadLocal.get());
     }
 }

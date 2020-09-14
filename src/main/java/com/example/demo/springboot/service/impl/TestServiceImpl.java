@@ -1,6 +1,7 @@
 package com.example.demo.springboot.service.impl;
 
 
+import com.example.demo.springboot.controller.TestController;
 import com.example.demo.springboot.entity.TbUser;
 import com.example.demo.springboot.mapper.TestMapper;
 import com.example.demo.springboot.service.TestService;
@@ -181,4 +182,10 @@ public class TestServiceImpl implements TestService {
     public void aop(){
         System.out.println("aop");
     }
+
+    @Override
+    public void threadLocal() {
+        System.out.println(TestController.threadLocal.get());
+    }
+
 }
