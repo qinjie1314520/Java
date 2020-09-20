@@ -24,4 +24,17 @@ public class User {
     public void setAge(String age) {
         this.age = age;
     }
+
+
+    static {
+        System.out.println("静态代码块");
+    }
+    public User(){
+        System.out.println("构造方法");
+    }
+    {
+        System.out.println("动态代码块");
+    }
+
+
 }
