@@ -1,6 +1,6 @@
 package com.example.demo.learn.接口和抽象类;
 
-public class two extends one{
+public class two extends one {
     public two(){
         System.out.println("asd");
 

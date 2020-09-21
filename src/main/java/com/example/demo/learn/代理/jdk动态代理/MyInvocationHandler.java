@@ -32,32 +32,18 @@ public class MyInvocationHandler implements InvocationHandler {
         return result;
     }
     public static void main(String args[]){
-        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
-//        Service aService = new AService();
-//
-//
-//        System.out.println("实现的接口："+aService.getClass().getInterfaces()[0].getName());
-//        MyInvocationHandler handler = new MyInvocationHandler(aService);
-//        // Proxy为InvocationHandler实现类动态创建一个符合某一接口的代理实例
-//        Service aServiceProxy = (Service) Proxy.newProxyInstance(aService
-//                .getClass().getClassLoader(), aService.getClass()
-//                .getInterfaces(), handler);
-//        // 由动态生成的代理对象来aServiceProxy 代理执行程序，其中aServiceProxy 符合Service接口
-//        aServiceProxy.add();
-//        System.out.println(aServiceProxy.getClass());
-//        aServiceProxy.update();
+        Service aService = new AService();
 
 
-        //通过
-        AService service = new AService();
-        Service service1 = (Service) Proxy.newProxyInstance(service.getClass().getClassLoader(), service.getClass().getInterfaces(), new InvocationHandler() {
-            @Override
-            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                Object re = method.invoke(service, args );
-                System.out.println("after");
-                return re;
-            }
-        });
-        service1.add();
+        System.out.println("实现的接口："+aService.getClass().getInterfaces()[0].getName());
+        MyInvocationHandler handler = new MyInvocationHandler(aService);
+        // Proxy为InvocationHandler实现类动态创建一个符合某一接口的代理实例
+        Service aServiceProxy = (Service) Proxy.newProxyInstance(aService
+                .getClass().getClassLoader(), aService.getClass()
+                .getInterfaces(), handler);
+        // 由动态生成的代理对象来aServiceProxy 代理执行程序，其中aServiceProxy 符合Service接口
+        aServiceProxy.add();
+        System.out.println(aServiceProxy.getClass());
+        aServiceProxy.update();
     }
 }
