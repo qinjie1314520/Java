@@ -1,4 +1,4 @@
-package com.example.demo.面试.代理.CGLIB代理;
+package com.example.demo.learn.代理.CGLIB代理;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;

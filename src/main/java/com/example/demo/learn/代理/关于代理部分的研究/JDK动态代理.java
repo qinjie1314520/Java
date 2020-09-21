@@ -1,4 +1,4 @@
-package com.example.demo.面试.代理.关于代理部分的研究;
+package com.example.demo.learn.代理.关于代理部分的研究;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

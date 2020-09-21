@@ -1,4 +1,4 @@
-package com.example.demo.面试.代理.静态代理;
+package com.example.demo.learn.代理.静态代理;
 
 
 public class 静态代理 {

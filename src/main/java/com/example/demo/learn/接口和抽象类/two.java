@@ -1,4 +1,4 @@
-package com.example.demo.面试.接口和抽象类;
+package com.example.demo.learn.接口和抽象类;
 
 public class two extends one{
     public two(){
