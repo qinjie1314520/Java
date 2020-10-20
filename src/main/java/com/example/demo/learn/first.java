@@ -23,6 +23,7 @@ public class first {
         //   +0.5 然后向下
         System.out.println(Math.round(-1.51));
         System.out.println(Math.round(-1.5));
+
     }
 
 }

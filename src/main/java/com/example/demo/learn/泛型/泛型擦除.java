@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 //泛型类和泛型方法public <T> T genericMethod(T t)
-public class Test<T> {
+public class 泛型擦除<T> {
     T a;
-    public Test(T aa){
+    public 泛型擦除(T aa){
         a = aa;
     }
     public T getA(){
@@ -15,8 +15,10 @@ public class Test<T> {
     public <E> void show_3(E t){
         System.out.println(t.toString());
     }
+
+
     public static void main(String args[]){
-        Test<Integer> test = new Test<Integer>(10);
+        泛型擦除<Integer> test = new 泛型擦除<Integer>(10);
         System.out.println(test.getA().getClass());
 
 

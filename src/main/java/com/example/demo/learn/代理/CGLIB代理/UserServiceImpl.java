@@ -7,8 +7,8 @@ import org.springframework.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
-public class UserServiceImpl implements UserService {
 
+public class UserServiceImpl implements UserService {
     @Override
     public String getName(int id) {
         System.out.println("------getName------");
