@@ -1,9 +1,12 @@
 package com.example.demo.springboot.controller;
 
+import com.example.demo.springboot.dto.TestDTO;
 import com.example.demo.springboot.service.TestService;
 import com.example.demo.springboot.cglib代理.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -83,5 +86,11 @@ public class TestController {
         testService.threadLocal();
 System.out.println(r.get("a"));
        return (threadLocal.get());
+    }
+
+
+    @PostMapping("/testDto")
+    public void testDTO(@RequestBody TestDTO testDTO){
+        System.out.println(testDTO);
     }
 }
