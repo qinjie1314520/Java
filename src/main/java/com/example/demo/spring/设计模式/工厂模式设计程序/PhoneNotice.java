@@ -1,4 +1,4 @@
-package com.example.demo.设计模式.工厂模式设计程序;
+package com.example.demo.spring.设计模式.工厂模式设计程序;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
