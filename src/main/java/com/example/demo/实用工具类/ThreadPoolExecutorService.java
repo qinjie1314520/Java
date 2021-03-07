@@ -1,0 +1,55 @@
+package com.example.demo.实用工具类;
+
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import java.util.concurrent.*;
+
+/**
+  * 创建线程池，提供增加线程的服务
+  *
+  * @author: qinjie
+ **/
+@Data
+public class ThreadPoolExecutorService {
+    /**
+     * 线程池
+     */
+    private ExecutorService executor;
+    /**
+     * 核心线程数
+     */
+    @Value("${core.pool.size}")
+    private Integer corePoolSize;
+    /**
+     * 最大线程数，普通+核心
+     */
+    @Value("${maximum.pool.size}")
+    private Integer maximumPoolSize;
+    /**
+     * 普通空闲线程存活时间
+     */
+    @Value("${keep.alive.time}")
+    private long keepAliveTime;
+    /**
+     * 线程缓存大小
+     */
+    @Value("${queue.capacity.size}")
+    private Integer queueCapacitySize;
+    @PostConstruct
+    public void init(){
+        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("thread-call-runner-%d").build();
+        executor = new ThreadPoolExecutor(corePoolSize,maximumPoolSize,keepAliveTime,TimeUnit.SECONDS, new LinkedBlockingQueue<>(queueCapacitySize),namedThreadFactory);
+    }
+    /**
+     * 功能描述: 利用线程池执行一个线程
+     * @param runnable 一个执行的线程
+     */
+    public void add(Runnable runnable){
+        executor.execute(runnable);
+//        executor.shutdown();
+    }
+}
